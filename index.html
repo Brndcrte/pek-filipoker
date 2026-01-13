@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="header-background">
+        <img src="assets/1.jpeg" alt="Background">
+    </div>
+    
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link nav-link-pek">Pek</a>
+                <a href="#" class="nav-link nav-link-filipoker">FiliPoker</a>
+                <div class="nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 4V2C7 1.44772 7.44772 1 8 1H16C16.5523 1 17 1.44772 17 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 6H21L20 20H4L3 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 10V14M15 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="left-column">
+                <!-- <div class="banner banner-1">
+                    <img src="assets/1.jpeg" alt="Banner 1">
+                </div> -->
+
+                <div class="categories-wrapper">
+                    <div class="categories">
+                        <div class="category-card category-card-left">
+                            <div class="category-image">
+                                <img src="assets/3.jpeg" alt="Pek">
+                                <h3 class="category-title">Pek</h3>
+                            </div>
+                        </div>
+                        <div class="category-card category-card-right">
+                            <div class="category-image">
+                                <img src="assets/4.jpeg" alt="FiliPoker">
+                                <h3 class="category-title">FiliPoker</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card product-1">
+                    <div class="product-image">
+                        <img src="assets/first_product.jpeg" alt="Товар 1">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-price">350 ₽</p>
+                    </div>
+                </div>
+                <div class="product-card product-2">
+                    <div class="product-image">
+                        <img src="assets/second_product.jpeg" alt="Товар 2">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-price">400 ₽</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
