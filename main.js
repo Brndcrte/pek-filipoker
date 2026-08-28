@@ -1,31 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('.nav');
+    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelectorAll('.nav-link');
+
+    function closeMenu() {
+        if (!navMenu) return;
+        navMenu.classList.remove('open');
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        document.addEventListener('click', function(e) {
+            if (navMenu.classList.contains('open') && !nav.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) closeMenu();
+        });
+    }
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             navLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
+            closeMenu();
         });
     });
-
-    const pekLink = document.querySelector('.nav-link-pek');
-    const filipokerLink = document.querySelector('.nav-link-filipoker');
-    
-    if (pekLink) {
-        pekLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-        });
-    }
-    
-    if (filipokerLink) {
-        filipokerLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-        });
-    }
 
     const productCards = document.querySelectorAll('.product-card');
     productCards.forEach(card => {
@@ -43,9 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'

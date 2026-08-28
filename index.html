@@ -16,16 +16,23 @@
     <div class="container">
         <header class="header">
             <nav class="nav">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#" class="nav-link nav-link-pek">Pek</a>
-                <a href="#" class="nav-link nav-link-filipoker">FiliPoker</a>
-                <div class="nav-icon">
+                <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link nav-link-pek">Pek</a>
+                    <a href="#" class="nav-link nav-link-filipoker">FiliPoker</a>
+                </div>
+                <button class="nav-icon" type="button" aria-label="Корзина">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 4V2C7 1.44772 7.44772 1 8 1H16C16.5523 1 17 1.44772 17 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         <path d="M3 6H21L20 20H4L3 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M9 10V14M15 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                </div>
+                </button>
             </nav>
         </header>
 
